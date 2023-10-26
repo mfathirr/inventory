@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class UserController extends Controller
 {
@@ -19,6 +20,30 @@ class UserController extends Controller
             $input['password'] = bcrypt($input['password']);
         }
         User::create($input);
+        return redirect('/user');
+    }
+
+    public function show($id){
+        $user = User::findOrFail($id);
+        return view('user.detail', compact('user'));
+    }
+
+    public function edit($id){
+        $user = User::findOrFail($id);
+        return view('user.edit', compact('user'));
+    }
+
+    public function update(Request $request, $id){
+        $user = User::findOrFail($id);
+        $data = $request->all();
+
+        if ($request->input('password')) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            $data = Arr::except($data,['password']);
+        }
+
+        $user->update();
         return redirect('/user');
     }
 }
