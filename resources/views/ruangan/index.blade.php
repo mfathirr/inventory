@@ -89,11 +89,11 @@
                                     <td>{{$row->nama_ruangan}}</td>
                                     <td>
                                         @if($row->ukuran == 'small')
-                                        <span class="badge badge-primary">Small</span>
+                                        <span class="badge text-bg-primary">Small</span>
                                         @elseif($row->ukuran == 'medium')
-                                        <span class="badge badge-secondary">Medium</span>
+                                        <span class="badge text-bg-secondary">Medium</span>
                                         @elseif($row->ukuran == 'large')
-                                        <span class="badge badge-warning">Large </span>
+                                        <span class="badge text-bg-warning">Large </span>
                                         @endif
                                     </td>
                                     <td>{{$row->users->name}}</td>
