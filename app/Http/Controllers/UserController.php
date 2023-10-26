@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Ruangan;
 use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -25,7 +26,8 @@ class UserController extends Controller
 
     public function show($id){
         $user = User::findOrFail($id);
-        return view('user.detail', compact('user'));
+        $ruangan = Ruangan::where('id_user', $id)->get()->all();
+        return view('user.detail', compact('user', 'ruangan'));
     }
 
     public function edit($id){
