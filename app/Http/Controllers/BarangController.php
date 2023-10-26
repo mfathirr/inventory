@@ -50,32 +50,49 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Barang $barang)
+    public function show($id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+        return view('barang.detail', compact('barang'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Barang $barang)
+    public function edit($id)
     {
-        //
+        $barang = Barang::find($id);
+        $kategori = Kategori::all();
+        $ruangan = Ruangan::all();
+        return view('barang.edit', compact('barang', 'kategori', 'ruangan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Barang $barang)
+    public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $barang = Barang::findOrFail($id);
+        if($request->hasFile('gambar')) {
+            $destination_path = 'public/images/barang';
+            $image = $request->file('gambar');
+            $name = $image->getClientOriginalExtension();
+            $path = $image->storeAs($destination_path, $name);
+            $input['gambar'] = $name;
+        }
+
+        $barang->update($data);
+        return redirect('/barang');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Barang $barang)
+    public function destroy($id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+        $barang->delete();
+        return back();
     }
 }
