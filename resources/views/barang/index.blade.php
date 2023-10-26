@@ -15,6 +15,16 @@
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
+                                        <span class="input-group-text">Nama Barang</span>
+                                    </div>
+                                    <input type="text" name="nama_barang" class="form-control"
+                                        placeholder="Nama Barang">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text">Kategori Barang</span>
                                     </div>
                                     <select class="custom-select" name="id_kategori">
@@ -25,6 +35,7 @@
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -36,24 +47,6 @@
                                         <option value="{{$row->id}}">{{$row->nama_ruangan}}</option>
                                         @endforeach
                                     </select>
-                                </div>
-                            </div>
-                            <!-- <div class="col-md-6">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nomor Barang</span>
-                                    </div>
-                                    <input type="text" name="nomor_barang" class="form-control"
-                                        placeholder="Nomor Barang">
-                                </div>
-                            </div> -->
-                            <div class="col-md-6">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nama Barang</span>
-                                    </div>
-                                    <input type="text" name="nama_barang" class="form-control"
-                                        placeholder="Nama Barang">
                                 </div>
                             </div>
 
@@ -74,18 +67,16 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
                                     <div class="custom-file">
                                         <input type="file" name="gambar" class="custom-file-input"
                                             id="inputGroupFile01">
-                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="col-md-4">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -99,6 +90,7 @@
                                     </select>
                                 </div>
                             </div>
+
                             {{-- <div class="col-md-12">
                                 <div class="input-group">
                                     

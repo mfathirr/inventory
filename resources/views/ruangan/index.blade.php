@@ -21,7 +21,7 @@
                                         placeholder="Nomor Ruangan">
                                 </div>
                             </div> -->
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Nama Ruangan</span>
