@@ -14,6 +14,6 @@ class Ruangan extends Model
 
     public function users()
     {
-        return $this->belongsTo('App\User', 'id_user');
+        return $this->belongsTo('App\Models\User', 'id_user');
     }
 }

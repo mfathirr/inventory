@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('ruangan', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('id_user')->unsigned();
             $table->string('nama_ruangan')->unique();
             $table->string('nomor_ruangan');
             $table->enum('ukuran', ['small', 'medium', 'large']);
-            $table->foreign('user_id')->on('users')->references('id')->onDelete('cascade');
+            $table->foreign('id_user')->on('users')->references('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

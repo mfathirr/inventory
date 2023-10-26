@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Ruangan;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class RuanganController extends Controller
      */
     public function index()
     {
-        //
+        $ruangan = Ruangan::all();
+        $user = User::all();
+        return view('ruangan.index',compact('user', 'ruangan'));
     }
 
     /**
@@ -28,7 +31,10 @@ class RuanganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['nomor_ruangan'] = 'Ruangan'.' '.random_int(100,999);
+        Ruangan::create($input);
+        return redirect('/ruangan');
     }
 
     /**
