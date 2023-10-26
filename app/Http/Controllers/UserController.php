@@ -46,4 +46,10 @@ class UserController extends Controller
         $user->update();
         return redirect('/user');
     }
+
+    public function destroy($id){
+        $user = User::findOrFail($id);
+        $user->delete();
+        return back();
+    }
 }
