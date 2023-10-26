@@ -70,8 +70,10 @@ class RuanganController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Ruangan $ruangan)
+    public function destroy($id)
     {
-        //
+        $ruangan = Ruangan::findOrFail($id);
+        $ruangan->delete();
+        return back();
     }
 }

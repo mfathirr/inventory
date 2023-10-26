@@ -29,7 +29,9 @@ class kategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Kategori::create($input);
+        return redirect('/kategori');
     }
 
     /**
@@ -43,24 +45,30 @@ class kategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Kategori $kategori)
+    public function edit($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        return view('kategori.edit', compact('kategori'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, $id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+        $data = $request->all();
+        $kategori->update($data);
+        return redirect('/kategori');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+        return back();
     }
 }
