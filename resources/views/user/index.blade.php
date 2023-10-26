@@ -71,7 +71,10 @@
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->username}}</td>
                                     <td>
-                                        <form action="" method="post">
+                                        <form action="{{ route('user.destroy', $row->id) }}" method="post">
+                                            @csrf
+                                            {{-- @method('DELETE') --}}
+                                            {{method_field('DELETE')}}
                                             <button type="submit" class="btn btn-danger"
                                                 onclick="return confirm('Apakah anda akan menghapus {{$row->user}} ?');">Hapus</button>
                                             <a href="{{ route('user.edit', $row->id) }}" class="btn btn-warning">Edit</a>
