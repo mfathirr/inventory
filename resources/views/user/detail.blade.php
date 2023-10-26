@@ -27,7 +27,7 @@
                     </table>
                 </div>
             </div>
-            {{-- <div class="card mt-4">
+            <div class="card mt-4">
                 <div class="card-header">Penanggung Jawab Ruangan</div>
 
                 <div class="card-body">
@@ -54,7 +54,7 @@
                         @endif
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>
