@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,7 @@ Route::get('/', function () {
 Route::resource('user', UserController::class);
 Route::resource('ruangan', RuanganController::class);
 Route::resource('kategori', kategoriController::class);
+Route::resource('barang', BarangController::class);
 
 Auth::routes();
 
