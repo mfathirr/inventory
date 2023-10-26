@@ -99,12 +99,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <div class="input-group">
                                     
                                     <textarea class="form-control" name="spek" id="konten"></textarea>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-6 mt-4">
                                 <div class="form-group">

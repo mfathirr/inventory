@@ -39,7 +39,7 @@ class BarangController extends Controller
             $image = $request->file('gambar');
             $name = $image->getClientOriginalExtension();
             $path = $image->storeAs($destination_path, $name);
-            $input['image'] = $name;
+            $input['gambar'] = $name;
         }
 
         $input['nomor_barang'] = 'Barang'.' '.random_int(100, 9999);
